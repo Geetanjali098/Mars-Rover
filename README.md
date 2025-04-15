@@ -32,7 +32,7 @@
 5. **Sample Test Runs**  
    - Rover 1 executes: `"rffrfflfrff"` (right, forward, forward, etc.)  
    - Rover 2 executes: `"lbblbblbblbb"` (left, backward, backward, etc.)  
-
+   - The code is standalone and runs in any JavaScript environment (e.g., browser console or Node.js)
 ## **How It Works**  
 The simulation mimics NASA’s Mars rover missions, where rovers receive movement commands from Earth.
 The program ensures safe navigation by enforcing grid limits, obstacle avoidance, and collision prevention.  
@@ -44,5 +44,5 @@ The program ensures safe navigation by enforcing grid limits, obstacle avoidance
 
 The code is well-structured, with clear functions for movement, turning, and command execution, making it easy to extend (e.g., adding more rovers or dynamic obstacles).  
 
-**Final Output:**  
+**Final Output:**
 The console logs each rover’s position changes and travel history, providing a clear trail of their movements on Mars! 🚀
