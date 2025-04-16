@@ -49,7 +49,7 @@ The program ensures safe navigation by enforcing grid limits, obstacle avoidance
 
 The code is well-structured, with clear functions for movement, turning, and command execution, making it easy to extend (e.g., adding more rovers or dynamic obstacles).  
 
-**Deployment**
+## **Deployment**
  - Execute the script in your terminal:
        node mars.js
    
