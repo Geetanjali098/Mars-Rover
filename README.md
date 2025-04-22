@@ -1,54 +1,67 @@
-# Mars Rover Simulation in JavaScript  
 
- A **Mars Rover simulation** that models the movement of robotic rovers on a 10x10 grid representing the Martian surface.
- The program includes two rovers that can move forward/backward, turn left/right, avoid obstacles, and prevent collisions with each other.  
+## 🚀 Project: **Mars Rover Simulation**
 
-## **Key Features**  
+### 🎯 **Goals**
+- Simulate movement of Mars Rovers on a 10x10 grid.
+- Handle rover navigation (turning/moving).
+- Detect collisions with obstacles and other rovers.
+- Track each rover's travel history.
+- Execute user-defined command sequences.
 
-1. **Rover Objects**  
-   - Each rover has:  
-     - A unique `id`  
-     - Current `direction` (N, S, E, W)  
-     - `(x, y)` coordinates  
-     - A `travelLog` recording its path  
+---
 
-2. **Grid (Mars Surface)**  
-   - A 10x10 matrix where:  
-     - `0` = empty space  
-     - `1` = obstacle  
-     - `2` = another rover (for collision detection)  
+### 🛠️ **How It Works**
 
-3. **Movement Functions**  
-   - `turnLeft()` / `turnRight()` – Changes the rover’s direction  
-   - `moveForward()` / `moveBackward()` – Moves the rover while checking:  
-     - **Grid boundaries** (prevents going out of bounds)  
-     - **Obstacles** (detects and stops at `1`)  
-     - **Collisions** (prevents rovers from overlapping)  
+#### 1. **Grid Setup**
+- A `10x10` grid represents the Mars surface.
+- Some cells contain:
+  - `0` – Empty space.
+  - `1` – Obstacle (e.g., at `[3, 3]`).
+  - `2` – A rover (e.g., Rover 2 at `[8, 8]`).
 
-4. **Command Execution**  
-   - `executeCommands(rover, commands)` – Takes a string of commands (`"f"`, `"b"`, `"r"`, `"l"`) and executes them sequentially.  
-   - Logs the rover’s path (`travelLog`) after execution.  
+#### 2. **Rover Configuration**
+- Two rovers (`rover1`, `rover2`) are defined with:
+  - `x` and `y` position.
+  - Direction (`N`, `S`, `E`, `W`).
+  - A travel log that stores all past positions.
 
-5. **Sample Test Runs**  
-   - Rover 1 executes: `"rffrfflfrff"` (right, forward, forward, etc.)  
-   - Rover 2 executes: `"lbblbblbblbb"` (left, backward, backward, etc.)
+#### 3. **Core Movement Functions**
+- `turnLeft(rover)`: Rotates rover 90° left.
+- `turnRight(rover)`: Rotates rover 90° right.
+- `moveForward(rover)`: Moves rover one step in its current direction.
+- `moveBackward(rover)`: Moves rover one step backward (opposite of current direction).
+
+Each move:
+- Checks grid boundaries.
+- Checks for obstacles.
+- Checks for collision with another rover.
+- Logs the position if the move is successful.
+
+#### 4. **Command Execution**
+- `executeCommands(rover, "commandString")`:
+  - Loops through each character:
+    - `f` = forward
+    - `b` = backward
+    - `l` = turn left
+    - `r` = turn right
+  - Validates command and executes accordingly.
+  - Logs the rover's movement history.
+
+#### 5. **Example Run**
+```js
+executeCommands(rover1, "rffrfflfrff"); // Moves and rotates Rover 1
+executeCommands(rover2, "lbblbblbblbb"); // Moves and rotates Rover 2
+```
+
+---
+
+### 🧠 Key Features
+- Multiple rover support.
+- Obstacle detection and avoidance.
+- Collision prevention.
+- Visual travel logging.
+- Realistic grid navigation.
   
-6. **Run the Script**
-  - Execute the script in your terminal:
-       node mars.js  
-  - The code is standalone and runs in any JavaScript environment (e.g., browser console or Node.js)
-    
-## **How It Works**  
-The simulation mimics NASA’s Mars rover missions, where rovers receive movement commands from Earth.
-The program ensures safe navigation by enforcing grid limits, obstacle avoidance, and collision prevention.  
-
-### **Potential Use Cases**  
-- **Educational tool** for learning robotics, pathfinding, and grid-based movement.  
-- **Game development** for turn-based movement systems.  
-- **Algorithm testing** for autonomous vehicle navigation.  
-
-The code is well-structured, with clear functions for movement, turning, and command execution, making it easy to extend (e.g., adding more rovers or dynamic obstacles).  
-
 ## **Deployment**
  - Execute the script in your terminal:
        node mars.js
